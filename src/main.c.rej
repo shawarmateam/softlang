@@ -1,0 +1,28 @@
+--- main.c	2024-11-15 22:48:39.872826447 +0300
++++ main.c	2024-11-15 22:47:31.766543514 +0300
+@@ -37,12 +37,23 @@
+ 
+ int main(int argv, char **argc) {
+     if (argv < 2) return 1;
+-    unsigned char* data = "";
++    unsigned char* data = "hello world\n";
+ 
+-    unsigned char tokens[] = {};
++    unsigned char tokens[] = {
++        PRINT, 0, 11,
++        0xff
++    };
+ 
+     for (int i=0;tokens[i]!=255;i++) {
+         switch (tokens[i]) {
++            case PRINT:
++                unsigned char temp[tokens[i+2]+2];
++
++                strncpy((char*)temp, (char*)data, tokens[i+2]+1);
++                temp[tokens[i+2]+1] = '\0';
++
++                printf("%s", temp);
++                break;
+         }
+     }
+ 
