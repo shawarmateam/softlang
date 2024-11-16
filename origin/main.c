@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define PRINT 0xfe
-
 char* readFile(const char* filename) {
     FILE *file;
     char line[256];

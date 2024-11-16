@@ -1,0 +1,3 @@
+memset 12 ;
+adddt "hello_world" ;
+print 0 11 ;

@@ -1,6 +1,6 @@
 # vars
 BUILD_D = bin
-CODE_D = src
+CODE_D = printinj-src
 
 # cmds
 all: build
